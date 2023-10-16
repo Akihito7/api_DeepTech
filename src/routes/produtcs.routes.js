@@ -1,10 +1,11 @@
 const { Router } = require("express"); 
+const ProductsController = require("../controllers/ProductsController");
+
+const controller = new ProductsController();
 
 const routes = Router();
 
-routes.get("/", (request, response ) => {
-    response.status(200).json("Bem vindo aos produtos")
-});
+routes.get("/", controller.getProducts);
 
 module.exports = routes;
 
