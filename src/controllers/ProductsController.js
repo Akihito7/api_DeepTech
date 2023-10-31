@@ -34,6 +34,17 @@ class ProductsController {
 
         response.status(200).json(uniqueCategories);
     };
+
+    async getByName(request, response) {
+        const { name } = request.params;
+
+        const products = await knex('products')
+            .where('name', 'like', `%${name}%`);
+
+        response.status(200).json(products);
+    };
+
+
 }
 
 module.exports = ProductsController;

@@ -8,6 +8,7 @@ const routes = Router();
 routes.get("/", controller.getProducts);
 routes.get("/category", controller.getCategories);
 routes.get("/category/:category", controller.getProductsByCategory);
+routes.get("/by-name/:name", controller.getByName);
 routes.get("/:id", controller.getUniqueProduct);
 
 module.exports = routes;
